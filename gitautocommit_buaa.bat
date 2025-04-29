@@ -26,7 +26,7 @@ if errorlevel 1 (
 :: 提交信息
 for /f "tokens=1-6 delims=/: " %%a in ('time /t') do set "time=%%a:%%b"
 for /f "tokens=1-3 delims=/ " %%a in ('date /t') do set "date=20%%c-%%a-%%b"
-set "commit_message=自动提交于 %date% %time%"
+set "commit_message=update on buaa %date% %time%"
 
 :: 执行提交
 git commit -m "%commit_message%"
