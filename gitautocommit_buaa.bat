@@ -34,5 +34,5 @@ git commit -m "%commit_message%"
 :: 推送到远程仓库
 git push origin %current_branch%
 
-echo 已成功提交并推送到分支 %current_branch%
+echo Successfully committed and pushed to the branch %current_branch%
 pause
