@@ -24,13 +24,13 @@
 
 因为Transformer不采用RNN结构，而是采用全局信息，因此使用位置Embedding来保存单词之间的相对位置关系。
 
-位置 Embedding 用 **PE**表示，**PE** 的维度与单词 Embedding 是一样的。PE 可以通过训练得到，也可以使用某种公式计算得到。在 Transformer 中采用了后者，计算公式如下：
+位置 Embedding 用 **PE**表示，**PE** 的维度与单词 Embedding 是一样的。PE 可以通过训练得到，也可以使用某种公式计算得到。在 Transformer 中采用了后者，计算公式如下： 
 $$
 PE_{(pos,2i)}=\sin{(pos/1000^{2i/d})}
 $$
 
 $$
-PE_{(pos,2i+1)}=\cos{(pos/10000^{2i/d})}
+ PE_{(pos,2i+1)}=\cos{(pos/10000^{2i/d})} 
 $$
 
 
@@ -70,11 +70,11 @@ Transformer中用到的是多头注意力机制，但要想更好地理解它，
 
 ### 3.1.2 Self-Attention的输出
 
-得到矩阵Q、K、V之后就可以计算出Self-Attention的输出，计算公式如下：
+得到矩阵Q、K、V之后就可以计算出Self-Attention的输出，计算公式如下： 
 $$
 \mathrm{Attention}(Q,K,V)=\mathrm{softmax}\left(\frac{QK^{T}}{\sqrt{d_{k}}}\right)V
 $$
-**其中，$d_{k}$是Q、K矩阵的列数，即向量维度**
+ **其中，$d_{k}$是Q、K矩阵的列数，即向量维度**
 
 公式中计算矩阵**Q**和**K**每一行向量的内积，为了防止内积过大，因此除以 $d_{k}$ 的平方根。**Q**乘以**K**的转置后，得到的矩阵行列数都为 n，n 为句子单词数，这个矩阵可以表示单词之间的 attention 强度。下图为**Q**乘以  $k^{T}$  ，1234 表示的是句子中的单词。
 
