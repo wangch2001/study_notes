@@ -25,6 +25,8 @@
 因为Transformer不采用RNN结构，而是采用全局信息，因此使用位置Embedding来保存单词之间的相对位置关系。
 
 位置 Embedding 用 **PE**表示，**PE** 的维度与单词 Embedding 是一样的。PE 可以通过训练得到，也可以使用某种公式计算得到。在 Transformer 中采用了后者，计算公式如下： 
+
+
 $$
 PE_{(pos,2i)}=\sin{(pos/1000^{2i/d})}
 $$
@@ -71,6 +73,8 @@ Transformer中用到的是多头注意力机制，但要想更好地理解它，
 ### 3.1.2 Self-Attention的输出
 
 得到矩阵Q、K、V之后就可以计算出Self-Attention的输出，计算公式如下： 
+
+
 $$
 \mathrm{Attention}(Q,K,V)=\mathrm{softmax}\left(\frac{QK^{T}}{\sqrt{d_{k}}}\right)V
 $$
