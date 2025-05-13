@@ -46,7 +46,7 @@ $$
 
 ## 2.3输入
 
-经过前两部后，我们得到Transformer的输入$X$，通常为一个矩阵 $X_{n\times d}$ ，其中$n$是句子中的单词个数，$d$表示向量的维度（论文中d=512），每一行是一个单词的词向量表示$x$。
+经过前两部后，我们得到Transformer的输入 $X$ ，通常为一个矩阵 $X_{n\times d}$ ，其中$n$是句子中的单词个数， $d$ 表示向量的维度（论文中d=512），每一行是一个单词的词向量表示$x$。
 
 <img src="./assets/image-20250510231357597.png" alt="image-20250510231357597" style="zoom:67%;" />
 
@@ -58,7 +58,7 @@ Transformer中用到的是多头注意力机制，但要想更好地理解它，
 
 <img src="./assets/image-20250510232355324.png" alt="image-20250510232355324" style="zoom:50%;" />
 
-上图是Self-Attention的结构，计算时需要用到Q（查询）、K（键值）、V（值），在Transformer的Encoder中，Self-Attention接收的是输入矩阵 $X_{n*d}$ ，在Decoder中，Self-Attention接收的是Encoderblock的输出（同样是一个 $n*d$ 维矩阵，我们用 $C_{n*d}$ 表示）。
+上图是Self-Attention的结构，计算时需要用到Q（查询）、K（键值）、V（值），在Transformer的Encoder中，Self-Attention接收的是输入矩阵 $X_{n*d}$  ，在Decoder中，Self-Attention接收的是Encoderblock的输出（同样是一个 $n*d$ 维矩阵，我们用 $C_{n*d}$ 表示）。
 
 ### 3.1.1 Q、K、V如何计算
 
@@ -141,6 +141,8 @@ Multi-Head Attention 包含多个 Self-Attention 层，首先将输入**X**分�
 ## 4.1 Add & Norm
 
 这部分分别由Add和Norm两部分组成，计算公式如下：
+
+
 $$
 \mathrm{LayerNorm}\big(X+\text{MultiHeadAttention}(X)\big)
 $$
@@ -162,6 +164,8 @@ $$
 ## 4.2 Feed Forward
 
 Feed Forward 层比较简单，是一个两层的全连接层，第一层的激活函数为 ReLU，第二层不使用激活函数，对应的公式如下：
+
+
 $$
 \max(0,XW_1+b_1)W_2+b_2
 $$
