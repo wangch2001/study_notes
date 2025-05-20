@@ -25,7 +25,7 @@ if errorlevel 1 (
 
 :: 提交信息
 for /f "tokens=1-6 delims=/: " %%a in ('time /t') do set "time=%%a:%%b"
-for /f "tokens=1-3 delims=/ " %%a in ('date /t') do set "date=20%%c-%%a-%%b"
+for /f "tokens=1-3 delims=/ " %%a in ('date /t') do set "date=%%a-%%b-%%c"
 set "commit_message=update on buaa %date% %time%"
 
 :: 执行提交

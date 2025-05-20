@@ -198,8 +198,6 @@ Deep Fusion：当文本特征和图像特征被抽取之后，理论上可以直
 
 
 
-
-
-
+未完待续。。。
 
 来自：https://www.bilibili.com/opus/710512153576079460?spm_id_from=333.999.0.0
