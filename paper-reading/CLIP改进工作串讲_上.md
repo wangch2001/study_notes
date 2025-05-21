@@ -192,12 +192,4 @@ Deep Fusion：当文本特征和图像特征被抽取之后，理论上可以直
 
 最新的很多工作DyHead和SoftTeacher没有zero-shot能力，但是经过微调后在COCO数据集上能够达到60左右的AP。GLIP-L具有zero-shot 的能力，能够达到将近50的AP，而且微调后也能达到60多一点的AP。整体来看效果还是不错的。
 
-
-
-
-
-
-
-未完待续。。。
-
 来自：https://www.bilibili.com/opus/710512153576079460?spm_id_from=333.999.0.0
