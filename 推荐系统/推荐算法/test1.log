@@ -1,0 +1,243 @@
+2025-03-17 23:07:15,827 - c:\Users\lxy\Desktop\study\news\code\data.py[line:26] - INFO: 数据处理，mode: valid
+2025-03-17 23:07:16,419 - c:\Users\lxy\Desktop\study\news\code\data.py[line:116] - DEBUG: df_train_click shape: (1112623, 9), df_test_click shape: (518010, 9)
+2025-03-17 23:07:16,465 - c:\Users\lxy\Desktop\study\news\code\data.py[line:33] - DEBUG: val_users num: 40248
+2025-03-17 23:09:11,027 - c:\Users\lxy\Desktop\study\news\code\data.py[line:72] - DEBUG: df_query shape: (90248, 2), df_click shape: (1590385, 9)
+2025-03-17 23:09:11,031 - c:\Users\lxy\Desktop\study\news\code\data.py[line:74] - DEBUG:    user_id  click_article_id
+0       26            211722
+1       30            209122
+2       54              1973
+3       70            235105
+4       72             30149
+2025-03-17 23:09:11,035 - c:\Users\lxy\Desktop\study\news\code\data.py[line:75] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+
+
+2025-03-19 16:53:56,792 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:38] - INFO: w2v 召回，mode: valid
+2025-03-19 16:53:56,860 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:141] - DEBUG: df_click shape: (1590385, 9)
+2025-03-17 23:36:40,587 - c:\Users\lxy\Desktop\study\news\code\recall_w2v.py[line:157] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+2025-03-17 23:36:44,112 - c:\Users\lxy\Desktop\study\news\code\recall_w2v.py[line:166] - INFO: 合并任务
+2025-03-17 23:36:45,727 - c:\Users\lxy\Desktop\study\news\code\recall_w2v.py[line:183] - DEBUG: df_data.head:    user_id  article_id  sim_score  label
+0       26       30760   1.799398    0.0
+1       26      234481   1.787133    0.0
+2       26      156279   1.739970    0.0
+3       26       70758   1.735986    0.0
+4       26      195177   1.722966    0.0
+2025-03-17 23:36:45,728 - c:\Users\lxy\Desktop\study\news\code\recall_w2v.py[line:187] - INFO: 计算召回指标
+2025-03-17 23:36:54,111 - c:\Users\lxy\Desktop\study\news\code\recall_w2v.py[line:194] - DEBUG: w2v: 0.12008050089445438, 0.06514195322334851, 0.16244285430331942, 0.07078821623395273, 0.21516597097992446, 0.074454248915156, 0.2674915523752733, 0.076326790857102, 0.27993937586960843, 0.07660267120473117
+
+
+
+2025-03-19 16:53:56,792 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:38] - INFO: itemcf 召回，mode: valid
+2025-03-19 16:53:56,860 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:141] - DEBUG: df_click shape: (1590385, 9)
+2025-03-19 16:53:56,869 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:142] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+2025-03-19 17:03:38,652 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:167] - INFO: 合并任务
+2025-03-19 17:08:41,380 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:168] - DEBUG: df_data.head:    user_id  article_id  sim_score  label
+0       26       50644   0.106784    0.0
+1       26      211442   0.101156    0.0
+2       26       30760   0.074575    0.0
+3       26      294107   0.058643    0.0
+4       26      234481   0.055513    0.0
+2025-03-19 17:08:41,380 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:172] - INFO: 计算召回指标
+2025-03-19 17:08:50,118 - c:\Users\lxy\Desktop\study\news\code\recall_itemcf.py[line:179] - DEBUG: itemcf: 0.33301033591731266, 0.19770009275822148, 0.4546312860266349, 0.2139289480616992, 0.5675561518584774, 0.22183567175355068, 0.6613993241900219, 0.22520609582377007, 0.6853259789306301, 0.22573468436797023
+
+
+
+2025-03-19 17:13:43,121 - c:\Users\lxy\Desktop\study\news\code\recall_binetwork.py[line:38] - INFO: binetwork 召回，mode: valid
+2025-03-19 17:13:43,154 - c:\Users\lxy\Desktop\study\news\code\recall_binetwork.py[line:130] - DEBUG: df_click shape: (1590385, 9)
+2025-03-19 17:13:43,161 - c:\Users\lxy\Desktop\study\news\code\recall_binetwork.py[line:131] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+2025-03-19 17:23:05,731 - c:\Users\lxy\Desktop\study\news\code\recall_binetwork.py[line:132] - INFO: 合并任务
+2025-03-19 17:23:07,213 - c:\Users\lxy\Desktop\study\news\code\recall_binetwork.py[line:148] - DEBUG: df_data.head:    user_id  article_id  sim_score  label
+0       26       50644  23.212020    0.0
+1       26      277107  15.819274    0.0
+2       26      331116  14.221612    0.0
+3       26      211442   8.729432    0.0
+4       26       96210   8.518630    0.0
+2025-03-19 17:23:07,214 - c:\Users\lxy\Desktop\study\news\code\recall_binetwork.py[line:152] - INFO: 计算召回指标
+2025-03-19 17:23:15,841 - c:\Users\lxy\Desktop\study\news\code\recall_binetwork.py[line:159] - DEBUG: binetwork: 0.34125919300337904, 0.20529715762272838, 0.4157970582389187, 0.21540815988490114, 0.48829755515802026, 0.2204916915358888, 0.5676058437686344, 0.22330652933858955, 0.5923275690717551, 0.22385159040489483
+
+2025-03-19 17:24:46,130 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:40] - INFO: 召回合并: valid
+2025-03-19 17:24:46,156 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:102] - DEBUG: max_threads 16
+2025-03-19 17:25:22,908 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:124] - DEBUG: 召回相似度 itemcf-w2v: 0.14198447049582508
+2025-03-19 17:25:28,522 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:124] - DEBUG: 召回相似度 itemcf-binetwork: 0.28278084739318815
+2025-03-19 17:25:33,698 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:124] - DEBUG: 召回相似度 w2v-itemcf: 0.2807297668646397
+2025-03-19 17:25:37,428 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:124] - DEBUG: 召回相似度 w2v-binetwork: 0.10894800992819785
+2025-03-19 17:25:42,583 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:124] - DEBUG: 召回相似度 binetwork-itemcf: 0.568850779063095
+2025-03-19 17:25:46,415 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:124] - DEBUG: 召回相似度 binetwork-w2v: 0.1108460058149301
+2025-03-19 17:26:08,454 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:141] - DEBUG: recall_final.shape: (14067490, 4)
+2025-03-19 17:26:08,458 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:142] - DEBUG: recall_final:     user_id  article_id  label  sim_score
+0        26       50644    0.0   2.002000
+1        26      211442    0.0   1.216068
+2        26       30760    0.0   0.953926
+5        26      277107    0.0   0.942492
+23       26      331116    0.0   0.672636
+2025-03-19 17:26:23,635 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:159] - DEBUG: df_useful_recall:      user_id  article_id  label  sim_score
+100       30      209122    1.0   2.075457
+103       30       50644    0.0   1.505559
+101       30      205824    0.0   1.471742
+108       30       36162    0.0   1.026074
+102       30      258195    0.0   0.762426
+2025-03-19 17:26:38,635 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:172] - DEBUG: 召回合并后指标: 0.37134764460345854, 0.22357963956800672, 0.48509242695289206, 0.23890211048641533, 0.5773206122043332, 0.24533798996510475, 0.6587159610415424, 0.2482366342432155, 0.6838352216259193, 0.24879481497493788
+2025-03-19 17:26:38,695 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:178] - DEBUG: 平均每个用户召回数量：155.50274372731383
+2025-03-19 17:26:38,790 - c:\Users\lxy\Desktop\study\news\code\recall.py[line:180] - DEBUG: 标签分布: label
+0.0    5013598
+1.0      31823
+Name: count, dtype: int64
+
+
+
+2025-03-19 18:04:56,011 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:04:56,108 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:131] - DEBUG: df_feature.shape: (12723701, 4)
+2025-03-19 18:04:57,395 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:140] - DEBUG: df_article.head():    article_id  category_id  created_at_ts  words_count
+0           0            0     1513144419          168
+1           1            1     1405341936          189
+2           2            1     1408667706          250
+3           3            1     1408468313          230
+4           4            1     1407071171          162
+2025-03-19 18:04:57,396 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:141] - DEBUG: df_feature.shape: (12723701, 8)
+2025-03-19 18:04:57,396 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:142] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime']
+2025-03-19 18:04:59,172 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:166] - DEBUG: df_feature.shape: (12723701, 9)
+2025-03-19 18:04:59,172 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:167] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean']
+2025-03-19 18:04:59,793 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:177] - DEBUG: df_feature.shape: (12723701, 10)
+2025-03-19 18:04:59,794 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:178] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean']
+2025-03-19 18:05:00,468 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:190] - DEBUG: df_feature.shape: (12723701, 12)
+2025-03-19 18:05:00,468 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:191] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std']
+2025-03-19 18:05:01,216 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:199] - DEBUG: df_feature.shape: (12723701, 13)
+2025-03-19 18:05:01,216 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:200] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std']
+2025-03-19 18:05:05,921 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:209] - DEBUG: df_feature.shape: (12723701, 15)
+2025-03-19 18:05:05,921 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:210] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count']
+2025-03-19 18:05:11,007 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:219] - DEBUG: df_feature.shape: (12723701, 17)
+2025-03-19 18:05:11,008 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:220] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max']
+2025-03-19 18:05:14,870 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:229] - DEBUG: df_feature.shape: (12723701, 19)
+2025-03-19 18:05:14,871 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:230] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean']
+2025-03-19 18:05:14,967 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:243] - DEBUG: df_feature.shape: (12723701, 22)
+2025-03-19 18:05:14,967 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:244] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff']
+2025-03-19 18:05:20,426 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:253] - DEBUG: df_feature.shape: (12723701, 25)
+2025-03-19 18:05:20,426 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:254] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt']
+2025-03-19 18:05:28,753 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,366 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,387 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,389 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,389 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,396 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,419 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,431 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:29,435 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,256 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,851 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,855 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,863 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,864 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,864 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,878 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,893 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:05:52,893 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:03,880 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:287] - DEBUG: df_feature.shape: (12723701, 27)
+2025-03-19 18:06:03,880 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:288] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt', 'user_clicked_article_itemcf_sim_sum', 'user_last_click_article_itemcf_sim']
+2025-03-19 18:06:07,981 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,597 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,597 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,602 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,602 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,603 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,604 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,622 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:08,627 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:19,914 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:304] - DEBUG: df_feature.shape: (12723701, 28)
+2025-03-19 18:06:19,915 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:305] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt', 'user_clicked_article_itemcf_sim_sum', 'user_last_click_article_itemcf_sim', 'user_last_click_article_binetwork_sim']
+2025-03-19 18:06:23,439 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,045 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,050 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,051 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,056 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,061 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,066 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,066 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:24,076 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:39,364 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:39,976 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:39,977 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:39,978 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:39,978 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:39,991 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:39,993 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:40,013 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:40,013 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:34] - INFO: 排序特征，mode: valid
+2025-03-19 18:06:51,200 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:324] - DEBUG: df_feature.shape: (12723701, 30)
+2025-03-19 18:06:51,201 - c:\Users\lxy\Desktop\study\news\code\rank_feature.py[line:325] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt', 'user_clicked_article_itemcf_sim_sum', 'user_last_click_article_itemcf_sim', 'user_last_click_article_binetwork_sim', 'user_last_click_article_w2v_sim', 'user_click_article_w2w_sim_sum_2']
+
+2025-03-19 18:14:29,943 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:34] - INFO: lightgbm 排序，mode: valid
+2025-03-19 18:14:33,444 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:79] - DEBUG: 
+Fold_1 Training ================================
+
+2025-03-19 18:15:42,324 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:34] - INFO: lightgbm 排序，mode: valid
+2025-03-19 18:15:45,822 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:79] - DEBUG: 
+Fold_1 Training ================================
+
+2025-03-19 18:20:16,427 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:79] - DEBUG: 
+Fold_2 Training ================================
+
+2025-03-19 18:26:31,000 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:79] - DEBUG: 
+Fold_3 Training ================================
+
+2025-03-19 18:33:02,950 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:79] - DEBUG: 
+Fold_4 Training ================================
+
+2025-03-19 18:40:10,856 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:79] - DEBUG: 
+Fold_5 Training ================================
+
+2025-03-19 18:47:26,125 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:116] - DEBUG: importance:                                      feature_name     importance
+0                                       sim_score  724343.585054
+1                  user_last_click_timestamp_diff  184148.534242
+2              user_last_click_created_at_ts_diff   93169.935615
+3                                  article_id_cnt   69654.372553
+4                                   created_at_ts   23540.130563
+5                                     words_count   23216.720970
+6                                      article_id   22144.811106
+7    user_click_timestamp_created_at_ts_diff_mean   21176.329225
+8              user_click_last_article_click_time   21052.696257
+9                         user_id_category_id_cnt   20122.430011
+10               user_last_click_words_count_diff   19481.491414
+11    user_click_timestamp_created_at_ts_diff_std   19211.511987
+12          user_clicked_article_words_count_mean   16854.016969
+13                   user_click_datetime_hour_std   16630.195104
+14  user_id_click_article_created_at_ts_diff_mean   15808.535539
+15                        user_id_click_diff_mean   15361.888461
+16            user_click_last_article_words_count   14486.215441
+17           user_click_last_article_created_time   13760.433055
+18                                        user_id   13737.151406
+19           user_clicked_article_click_time_mean   13518.846471
+20          user_clicked_article_created_time_max   12469.722059
+21                                    category_id    9263.506685
+22                                    user_id_cnt    8292.006209
+23          user_last_click_article_binetwork_sim       0.000000
+24             user_last_click_article_itemcf_sim       0.000000
+25                user_last_click_article_w2v_sim       0.000000
+26               user_click_article_w2w_sim_sum_2       0.000000
+27            user_clicked_article_itemcf_sim_sum       0.000000
+2025-03-19 18:47:29,696 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:123] - DEBUG: df_oof.head:    user_id  article_id  label      pred
+2       30      205824    0.0  0.247947
+0       30      209122    1.0  0.244423
+1       30       50644    0.0  0.159936
+6       30      277107    0.0  0.060473
+5       30      205958    0.0  0.059958
+2025-03-19 18:47:37,611 - c:\Users\lxy\Desktop\study\news\code\rank_lgb.py[line:129] - DEBUG: 0.4372888093818326, 0.26807667461737916, 0.5721774995030809, 0.28624038895357906, 0.6835122242098987, 0.2940943191258328, 0.7555406479825084, 0.2967223520100248, 0.7695537666467899, 0.29703344941093957
+
