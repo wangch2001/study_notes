@@ -40,12 +40,12 @@ ViLT 的预训练主要包含以下三个目标函数（loss）：
 
 1. **Image–Text Matching（ITM）**
    - 随机以 50% 的概率将正确配对的图像替换为其他图像，构造“正样本／负样本”对。
-   - 将 Transformer 输出的 pooled 表征 ppp 送入一个单层线性分类头，预测该图文对是否匹配，计算交叉熵负对数似然损失作为 ITM loss。 
+   - 将 Transformer 输出的 pooled 表征 p 送入一个单层线性分类头，预测该图文对是否匹配，计算交叉熵负对数似然损失作为 ITM loss。 
 2. **Word–Patch Alignment（WPA）正则项**
-   - 借鉴 Chen 等人（2019）的 word–region 对齐思想，取 Transformer 最后一层输出 zDz^DzD 中的文本子集 z∣tDz^D_{\vert t}z∣tD 与视觉子集 z∣vDz^D_{\vert v}z∣vD，用 IPOT（Inexact Proximal point method for Optimal Transport）计算它们之间的近似 Wasserstein 距离。
+   - 借鉴 Chen 等人（2019）的 word–region 对齐思想，取 Transformer 最后一层输出 $z^D$ 中的文本子集与视觉子集用 IPOT（Inexact Proximal point method for Optimal Transport）计算它们之间的近似 Wasserstein 距离。
    - 将该距离乘以 0.1 后加到 ITM loss 上，鼓励模型在对齐层面加强跨模态一致性。 
 3. **Masked Language Modeling（MLM）**
-   - 按照 BERT 的策略，以 15% 概率随机选取文本 token 做掩码（Whole Word Masking），只保留被 mask 的 token 的上下文表示 z\masked∣tDz^D_{\masked\vert t}z\masked∣tD。
+   - 按照 BERT 的策略，以 15% 概率随机选取文本 token 做掩码（Whole Word Masking），只保留被 mask 的 token 的上下文表示 。
    - 对这些被掩码的 token 用一个两层 MLP 预测其原始词表索引，同样计算交叉熵负对数似然作为 MLM loss。 
 
 > **可选的 Masked Patch Prediction（MPP）目标**
