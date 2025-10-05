@@ -1,5 +1,6 @@
 def sigmoid(x):
     return 1/(1+np.exp(x))
+
 def cross_entropy(y_pred,y_true):
     y_pred_prob=sigmoid(y_pred)
     loss=-(np.log(y_pred_prob)*y_true)+(1-y_true)*(1-np.log(y_pred_prob))
