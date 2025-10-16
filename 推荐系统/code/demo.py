@@ -1,12 +1,11 @@
-def quicksort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = quicksort([x for x in arr if x < pivot])
-    mid = [x for x in arr if x == pivot]
-    right = quicksort([x for x in arr if x > pivot])
-    return left + mid + right
+import bisect
 
-num = [3,6,1,5,7]
-print(num)
-print(quicksort(num))
+arr = [1, 2, 3, 4, 5, 7]
+
+pos = bisect.bisect_left(arr, 3)
+print(pos)
+print(arr[pos])
+
+pos2 = bisect.bisect_right(arr, 3)
+print(pos2)
+print(arr[pos2])
