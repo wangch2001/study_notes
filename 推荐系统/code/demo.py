@@ -1,11 +1,21 @@
-import bisect
 
-arr = [1, 2, 3, 4, 5, 7]
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return i + 1
 
-pos = bisect.bisect_left(arr, 3)
-print(pos)
-print(arr[pos])
+def quicksort_inplace(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quicksort_inplace(arr, low, pi - 1)
+        quicksort_inplace(arr, pi + 1, high)
 
-pos2 = bisect.bisect_right(arr, 3)
-print(pos2)
-print(arr[pos2])
+nums = [3,6,8,10,1,2,1]
+print("排序前：", nums)
+quicksort_inplace(nums, 0, len(nums)-1)
+print("排序后：", nums)
