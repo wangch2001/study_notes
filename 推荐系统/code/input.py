@@ -126,7 +126,7 @@ def build_tree(values):
         i += 1
     return root
 
-values = input.split()
+values = input().split()
 root = build_tree(values)
 
 # 输出二叉树（层序遍历）

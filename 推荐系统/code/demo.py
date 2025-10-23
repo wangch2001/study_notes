@@ -1,20 +1,34 @@
-n1, m = map(int, input().split())
-graph = [[] for _ in range(n1 + 1)]
-for _ in range(m):
-    u, v = map(int, input().split())
-    graph[u].append(v)
-    graph[v].append(u)
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
-# 图（邻接矩阵）
-n2 = int(input())
-matrix = [list(map(int, input().split())) for _ in range(n2)]
+class MultiHeadSelfAttention(nn.Module):
+    def __int__(self, embed_dim, num_heads, dropout=0.1):
+        super(MultiHeadSelfAttention, self).__init__()
 
-# 输出图（邻接表）
-print("邻接表表示：")
-for u in range(1, n1 + 1):
-    print(u, ":", *graph[u])
+        assert embed_dim % num_heads == 0
 
-# 输出图（邻接矩阵）
-print("\n邻接矩阵表示：")
-for row in matrix:
-    print(*row)
+        self.num_heads = num_heads
+        self.head_dim = embed_dim // num_heads
+
+        self.query = nn.Linear(embed_dim, embed_dim)
+        self.key = nn.Linear(embed_dim, embed_dim)
+        self.value = nn.Linear(embed_dim, embed_dim)
+
+        self.fc = nn.Linear(embed_dim, embed_dim)
+
+        self.attn_dropout = nn.Dropout(dropout)
+        self.output_dropout = nn.Dropout(dropout)
+
+    def forward(self, x):
+        batch_size, seq_len, embed_dim = x.size()
+        assert embed_dim == self.num_heads * self.head_dim
+        Q = self.query(x)
+        K = self.key(x)
+        V = self.value(x)
+
+        Q = Q.view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1,2)
+        K = K.view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1,2)
+        V = V.view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1,2)
+
+        attn_scores = torch.matmul(Q, K.transpose(-2, -1)) / torch.sqrt(torch.tensor(self.head_dim, dtype=torch.float32))
