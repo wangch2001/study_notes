@@ -1,3 +1,5 @@
+import random
+
 
 def quicksort(arr):
     if len(arr) <= 1:
@@ -16,14 +18,24 @@ print(quicksort(nums))
 
 # 原地版快速排序（更接近算法教科书）
 def partition(arr, low, high):
-    pivot = arr[high]  # 最右边元素作为基准
-    i = low - 1
-    for j in range(low, high):
-        if arr[j] <= pivot:
+    i = random.randint(low, high)
+    pivot = arr[i]
+    arr[i], arr[low] = arr[low], arr[i]
+    i = low + 1
+    j = high
+    while True:
+        while i <= j and arr[i] < pivot:
             i += 1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i+1], arr[high] = arr[high], arr[i+1]
-    return i+1
+        while i <= j and arr[j] > pivot:
+            j -= 1
+        if i >= j:
+            break
+        nums[i], nums[j] = nums[j], nums[i]
+        i += 1
+        j -= 1
+    nums[low], nums[j] = nums[j], nums[low]
+    return j
+
 
 def quicksort_inplace(arr, low, high):
     if low < high:
