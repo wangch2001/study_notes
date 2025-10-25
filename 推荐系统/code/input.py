@@ -62,7 +62,7 @@ print("hello", end = "")
 print("word")
 
 # 09 输出到同一行（循环）
-for i  in range(5):
+for i in range(5):
     print(i, end = "")
 
 # 10 输出布尔/特殊要求
