@@ -1,47 +1,22 @@
-from collections import deque
+def sqrt3(
+        x0 = 1.0,
+        lr = 0.01,
+        max_steps = 10000,
+        tol = 1e-12
+):
+    x = x0
+    for step in range(max_steps):
+        grad = 4 * x * (x ** 2 - 3)
+        x_new = x - lr * grad
+        loss = (x * x - 3) ** 2
 
+        if step < 10 or step % 500 == 0:
+            print(f"step:{step} | x = {x:.12f} | loss = {loss:.12e} | grad = {grad:.12e}")
+        if abs(x_new - x) < tol:
+            print(f"Converged at step {step}")
+            x = x_new
+            break
+        x = x_new
+    return x
 
-class TreeNode():
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-def build_tree(values):
-    if not values or values[0] == "null":
-        return None
-    root = TreeNode(int(values[0]))
-    q = deque([root])
-    i = 1
-    while q and i < len(values):
-        node = q.popleft()
-        if values[i] != "null":
-            node.left = TreeNode(values[i])
-            q.append(node.left)
-        i += 1
-        if i < len(values) and values[i] != "null":
-            node.right = TreeNode(values[i])
-            q.append(node.right)
-        i += 1
-    return root
-
-
-def print_tree(root):
-    if not root:
-        print("None")
-        return
-    q = deque([root])
-    res = []
-    while q:
-        node = q.popleft()
-        if node:
-            res.append(str(node.val))
-            q.append(node.left)
-            q.append(node.right)
-        else:
-            res.append("null")
-    print(" ".join(res))
-
-values = input().split()
-root = build_tree(values)
-print_tree(root)
+print(sqrt3())
