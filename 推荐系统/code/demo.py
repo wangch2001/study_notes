@@ -1,32 +1,24 @@
-import random
+def sqrt3(
+        x = 1.0,
+        lr = 0.01,
+        max_steps = 10000,
+        tol = 1e-12
+):
 
-def partition(nums, low, high):
-    i = random.randint(low, high)
-    pivot = nums[i]
-    nums[i], pivot = pivot, nums[i]
-    i = low + 1
-    j = high
-    while True:
-        while i <= j and nums[i] < pivot:
-            i += 1
-        while i <= j and nums[j] > pivot:
-            j -= 1
-        if i >= j:
-            break
-        nums[i], nums[j] = nums[j], nums[i]
-        i += 1
-        j -= 1
-    nums[low], nums[j] = nums[j], nums[low]
-    return j
+    for i in range(max_steps):
+        grad = 4 * x * (x ** 2 - 3)
+        x_new = x - grad * lr
 
-def quicksort(nums, low, high):
-    if low < high:
-        pi = partition(nums, low, high)
-        quicksort(nums, low, pi - 1)
-        quicksort(nums, pi + 1, high)
 
-# 测试
-nums = [3,6,8,10,1,2,1]
-print("排序前:", nums)
-quicksort(nums, 0, len(nums)-1)
-print("排序后:", nums)
+        if abs(x_new - x) < tol:
+            return x_new
+        x = x_new
+
+ans = sqrt3(
+    x=2.0,   # 初值给 2.0，接近 √3 ≈ 1.732...
+    lr=0.05   # 学习率 0.05 在这个问题上挺稳
+)
+
+print("\nApprox sqrt(3) =", ans)
+print("Check: ans^2    =", ans * ans)
+
