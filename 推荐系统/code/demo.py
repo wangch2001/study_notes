@@ -1,22 +1,32 @@
-def sqrt3(
-        x0 = 1.0,
-        lr = 0.01,
-        max_steps = 10000,
-        tol = 1e-12
-):
-    x = x0
-    for step in range(max_steps):
-        grad = 4 * x * (x ** 2 - 3)
-        x_new = x - lr * grad
-        loss = (x * x - 3) ** 2
+import random
 
-        if step < 10 or step % 500 == 0:
-            print(f"step:{step} | x = {x:.12f} | loss = {loss:.12e} | grad = {grad:.12e}")
-        if abs(x_new - x) < tol:
-            print(f"Converged at step {step}")
-            x = x_new
+def partition(nums, low, high):
+    i = random.randint(low, high)
+    pivot = nums[i]
+    nums[i], pivot = pivot, nums[i]
+    i = low + 1
+    j = high
+    while True:
+        while i <= j and nums[i] < pivot:
+            i += 1
+        while i <= j and nums[j] > pivot:
+            j -= 1
+        if i >= j:
             break
-        x = x_new
-    return x
+        nums[i], nums[j] = nums[j], nums[i]
+        i += 1
+        j -= 1
+    nums[low], nums[j] = nums[j], nums[low]
+    return j
 
-print(sqrt3())
+def quicksort(nums, low, high):
+    if low < high:
+        pi = partition(nums, low, high)
+        quicksort(nums, low, pi - 1)
+        quicksort(nums, pi + 1, high)
+
+# 测试
+nums = [3,6,8,10,1,2,1]
+print("排序前:", nums)
+quicksort(nums, 0, len(nums)-1)
+print("排序后:", nums)
