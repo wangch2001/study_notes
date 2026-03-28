@@ -77,7 +77,7 @@ class ListNode:
         self.val = val
         self.next = nxt
 
-def build_linked_list(self):
+def build_linked_list(arr):
     dummy = ListNode()
     cur = dummy
     for x in arr:
@@ -86,7 +86,7 @@ def build_linked_list(self):
     return dummy.next
 
 arr = list(map(int, input().split()))
-head = build_linked_list()
+head = build_linked_list(arr)
 
 # 输出链表：
 def print_linked_list(head):
